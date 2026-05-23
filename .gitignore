@@ -1,0 +1,68 @@
+# --- Dependencies ---
+node_modules/
+node_modules
+.pnp
+.pnp.js
+
+hyper_spectral_interface
+
+# --- Build output ---
+dist/
+build/
+
+# --- Environment variables ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --- IDE and editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# --- Runtime ---
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# --- Coverage / test ---
+coverage/
+.nyc_output/
+
+# --- AI agent tooling ---
+.agents/
+.claude/
+
+# --- Generated design variants ---
+neural_architect_home_live_cinematic/
+neural_architect_home_motion_active_60fps/
+operational_systems_projects_live_cinematic/
+operational_systems_projects_motion_active_60fps/
+
+# --- Misc ---
+.cache/
+tmp/
+temp/
