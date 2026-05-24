@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'motion/react'
 import SideMetrics from './SideMetrics'
 import StatusDot from '../ui/StatusDot'
 
@@ -30,12 +31,22 @@ export default function Hero() {
 
         <div className="flex flex-col md:flex-row gap-5 justify-center items-center"
           style={{ animation: 'fadeUp 0.8s 0.9s both ease-out' }}>
-          <button onClick={() => document.getElementById('connect')?.scrollIntoView({ behavior: 'smooth' })} className="cyber-button px-10 py-4 bg-primary-fixed-dim text-on-primary font-body-md font-bold rounded">
+          <motion.button
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            onClick={() => document.getElementById('connect')?.scrollIntoView({ behavior: 'smooth' })}
+            className="cyber-button px-10 py-4 bg-primary-fixed-dim text-on-primary font-body-md font-bold rounded"
+          >
             INITIATE_CONNECT
-          </button>
-          <button onClick={() => navigate('/schematics')} className="cyber-button px-10 py-4 border border-primary-fixed-dim/30 text-primary-fixed-dim font-body-md font-medium rounded backdrop-blur-md hover:bg-primary-fixed/10">
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            onClick={() => navigate('/schematics')}
+            className="cyber-button px-10 py-4 border border-primary-fixed-dim/30 text-primary-fixed-dim font-body-md font-medium rounded backdrop-blur-md hover:bg-primary-fixed/10"
+          >
             VIEW_SCHEMATICS
-          </button>
+          </motion.button>
         </div>
       </div>
 

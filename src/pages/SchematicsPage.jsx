@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'motion/react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import GlassCard from '../components/ui/GlassCard'
 import StatusDot from '../components/ui/StatusDot'
@@ -130,9 +131,14 @@ export default function SchematicsPage() {
             End-to-end pipeline visualization with real-time signal routing and protocol state transitions.
           </p>
           <div style={{ animation: 'fadeUp 0.8s 0.9s both ease-out' }}>
-            <button onClick={() => navigate('/')} className="cyber-button px-8 py-3 border border-primary-fixed-dim/30 text-primary-fixed-dim font-body-md font-medium rounded backdrop-blur-md hover:bg-primary-fixed/10">
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              onClick={() => navigate('/')}
+              className="cyber-button px-8 py-3 border border-primary-fixed-dim/30 text-primary-fixed-dim font-body-md font-medium rounded backdrop-blur-md hover:bg-primary-fixed/10"
+            >
               &larr; RETURN_TO_CONSOLE
-            </button>
+            </motion.button>
           </div>
         </div>
       </section>
@@ -376,9 +382,14 @@ export default function SchematicsPage() {
             <StatusDot rings={2} />
             <span className="font-label-sm text-label-sm text-primary-fixed tracking-[0.3em] uppercase">SCHEMATICS_ACTIVE // v4.0</span>
           </div>
-          <button onClick={() => navigate('/')} className="cyber-button px-8 py-3 bg-primary-fixed-dim text-on-primary font-body-md font-bold rounded uppercase tracking-widest">
+          <motion.button
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            onClick={() => navigate('/')}
+            className="cyber-button px-8 py-3 bg-primary-fixed-dim text-on-primary font-body-md font-bold rounded uppercase tracking-widest"
+          >
             RETURN_TO_CONSOLE
-          </button>
+          </motion.button>
         </div>
       </section>
     </>

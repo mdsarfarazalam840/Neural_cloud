@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'motion/react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import GlassCard from '../ui/GlassCard'
 import SyncBar from '../ui/SyncBar'
@@ -150,12 +151,22 @@ export default function ProjectsSection() {
                   Micro-satellite telemetry management and high-frequency orbital communication framework.
                 </p>
                 <div className="flex gap-3">
-                  <button onClick={() => navigate('/core')} className="bg-primary-fixed-dim text-on-primary px-5 py-2 font-bold uppercase tracking-widest font-label-sm text-label-sm hover:shadow-[0_0_20px_rgba(0,219,231,0.5)] transition-all rounded">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => navigate('/core')}
+                    className="bg-primary-fixed-dim text-on-primary px-5 py-2 font-bold uppercase tracking-widest font-label-sm text-label-sm hover:shadow-[0_0_20px_rgba(0,219,231,0.5)] transition-all rounded"
+                  >
                     ACCESS_CORE
-                  </button>
-                  <button onClick={() => navigate('/protocol-docs')} className="border border-primary-fixed text-primary-fixed px-5 py-2 font-bold uppercase tracking-widest font-label-sm text-label-sm hover:bg-primary-fixed/10 transition-all rounded">
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => navigate('/protocol-docs')}
+                    className="border border-primary-fixed text-primary-fixed px-5 py-2 font-bold uppercase tracking-widest font-label-sm text-label-sm hover:bg-primary-fixed/10 transition-all rounded"
+                  >
                     PROTOCOL_DOCS
-                  </button>
+                  </motion.button>
                 </div>
               </div>
             </GlassCard>

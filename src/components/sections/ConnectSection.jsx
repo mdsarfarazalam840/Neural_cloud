@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { motion } from 'motion/react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5ZkL-gdJJODIVyYeyNKyE8LddCPry8hDATKR12F7IcNTD7fNhl2N-ReR-Q4aQwylYIw/exec'
@@ -76,12 +77,14 @@ export default function ConnectSection() {
               TX_ID: {txId}
             </div>
             <div>
-              <button
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
                 onClick={handleReset}
                 className="cyber-button px-8 py-3 bg-primary-fixed-dim text-on-primary font-body-md font-bold rounded uppercase tracking-widest"
               >
                 TRANSMIT_ANOTHER
-              </button>
+              </motion.button>
             </div>
           </div>
         ) : (
@@ -128,13 +131,15 @@ export default function ConnectSection() {
               <div className="scan-line" />
             </div>
 
-            <button
+            <motion.button
               type="submit"
               disabled={status === 'sending'}
+              whileHover={status !== 'sending' ? { scale: 1.02 } : {}}
+              whileTap={status !== 'sending' ? { scale: 0.97 } : {}}
               className="cyber-button w-full py-4 bg-primary-fixed-dim text-on-primary font-body-md font-bold rounded uppercase tracking-widest disabled:opacity-60"
             >
               {status === 'sending' ? 'ENCRYPTING...' : 'TRANSMIT_SIGNAL'}
-            </button>
+            </motion.button>
           </form>
         )}
         <iframe name="hidden_iframe" className="hidden" />

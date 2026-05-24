@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'motion/react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import GlassCard from '../components/ui/GlassCard'
 import StatusDot from '../components/ui/StatusDot'
@@ -89,9 +90,14 @@ export default function CorePage() {
             Low-level kernel architecture with real-time module interaction and hardware abstraction layer.
           </p>
           <div style={{ animation: 'fadeUp 0.8s 0.9s both ease-out' }}>
-            <button onClick={() => navigate('/')} className="cyber-button px-8 py-3 border border-primary-fixed-dim/30 text-primary-fixed-dim font-body-md font-medium rounded backdrop-blur-md hover:bg-primary-fixed/10">
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              onClick={() => navigate('/')}
+              className="cyber-button px-8 py-3 border border-primary-fixed-dim/30 text-primary-fixed-dim font-body-md font-medium rounded backdrop-blur-md hover:bg-primary-fixed/10"
+            >
               &larr; RETURN_TO_CONSOLE
-            </button>
+            </motion.button>
           </div>
         </div>
       </section>
@@ -182,12 +188,22 @@ export default function CorePage() {
             <span className="font-label-sm text-label-sm text-primary-fixed tracking-[0.3em] uppercase">CORE_ACTIVE // v4.0</span>
           </div>
           <div className="flex gap-4">
-            <button onClick={() => navigate('/')} className="cyber-button px-8 py-3 border border-primary-fixed-dim/30 text-primary-fixed-dim font-body-md font-medium rounded backdrop-blur-md hover:bg-primary-fixed/10">
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              onClick={() => navigate('/')}
+              className="cyber-button px-8 py-3 border border-primary-fixed-dim/30 text-primary-fixed-dim font-body-md font-medium rounded backdrop-blur-md hover:bg-primary-fixed/10"
+            >
               CONSOLE
-            </button>
-            <button onClick={() => navigate('/protocol-docs')} className="cyber-button px-8 py-3 bg-primary-fixed-dim text-on-primary font-body-md font-bold rounded uppercase tracking-widest">
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              onClick={() => navigate('/protocol-docs')}
+              className="cyber-button px-8 py-3 bg-primary-fixed-dim text-on-primary font-body-md font-bold rounded uppercase tracking-widest"
+            >
               PROTOCOL_DOCS
-            </button>
+            </motion.button>
           </div>
         </div>
       </section>
