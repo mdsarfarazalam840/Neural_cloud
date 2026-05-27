@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { motion } from 'motion/react'
 import { useSettings } from '../../context/SettingsContext'
 import SettingsPanel from '../settings/SettingsPanel'
 
@@ -54,36 +55,40 @@ export default function Navbar() {
       </a>
       <div className="hidden md:flex items-center gap-10">
         {sections.map((s) => (
-          <a
+          <motion.a
             key={s.id}
             href={`#${s.id}`}
             data-target={s.id}
             className="nav-link text-body-md uppercase tracking-widest text-on-surface-variant"
+            whileHover={{ scale: 1.06 }}
+            whileTap={{ scale: 0.95 }}
             onClick={(e) => { e.preventDefault(); handleNavClick(s.id) }}
           >
             {s.label}
-          </a>
+          </motion.a>
         ))}
       </div>
       <div className="flex items-center gap-3 relative" id="settings-container">
-        <button
+        <motion.button
           ref={btnRef}
           className="p-2 transition-all duration-500 hover:scale-110 hover:bg-primary-fixed/10 hover:shadow-[0_0_15px_rgba(0,219,231,0.3)] rounded-full group"
+          whileTap={{ scale: 0.9 }}
           onClick={(e) => { e.stopPropagation(); setPanelOpen(!panelOpen) }}
         >
           <span className="material-symbols-outlined text-primary-fixed-dim group-hover:rotate-180 transition-transform duration-700">
             settings_input_component
           </span>
-        </button>
+        </motion.button>
         <SettingsPanel panelRef={panelRef} />
-        <button
+        <motion.button
           className="p-2 transition-all duration-500 hover:scale-110 hover:bg-primary-fixed/10 hover:shadow-[0_0_15px_rgba(0,219,231,0.3)] rounded-full group"
+          whileTap={{ scale: 0.9 }}
           onClick={() => setTerminalOpen(true)}
         >
           <span className="material-symbols-outlined text-primary-fixed-dim group-hover:translate-x-1 transition-transform">
             terminal
           </span>
-        </button>
+        </motion.button>
       </div>
     </nav>
   )

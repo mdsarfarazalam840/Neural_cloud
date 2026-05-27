@@ -1,6 +1,7 @@
 import { useSettings } from '../../context/SettingsContext'
 import { useEffect, useCallback } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import { motion, AnimatePresence } from 'motion/react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Cursor from './Cursor'
@@ -57,7 +58,17 @@ export default function Layout() {
       {scanline && <div className="scanline-overlay" />}
       {noise && <div className="neural-noise" />}
       <Navbar />
-      <Outlet />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.25, ease: 'easeInOut' }}
+        >
+          <Outlet />
+        </motion.div>
+      </AnimatePresence>
       <Footer />
       <ShellTerminal />
       <SectionNavWatcher />
